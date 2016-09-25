@@ -13,7 +13,6 @@
 }
 
 .tab-content .tab-pane{
-    min-height: 600px;
 }
 
 .btn-get_start{
@@ -22,3 +21,17 @@
     float: none;
 }
 
+
+.custom-panel:after, .custom-panel:before{
+  content: ""; 
+  display: block; 
+  clear: both; 
+}
+
+.custom-panel{
+    margin: 50px 0px;
+}
+
+.domain-table{
+    margin-top: 30px;
+}

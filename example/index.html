@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>iroha.js demo</title>
+        <title>irohajs demo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
@@ -16,14 +16,15 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="">GitHub</a></li>
-                    <li><a href="">HowToUse</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="https://github.com/soramitsu/IrohaJS">GitHub</a></li>
                 </ul>
 
             </div>
         </nav>
         <div class="container">
+            <div class="col-md-12 text-center" style="margin-bottom: 30px;">
+                <img src="img/iroha-main-center.png" alt="iroha">
+            </div>
             <div class="col-md-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
@@ -36,13 +37,13 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="start">
-                        <div>
+                        <div class="custom-panel">
                             <h2>GET START(SETTING)</h2>
                             <div class="form-group">
                                 <label for="accessPoint">Access Point</label>
                                 <input id="accessPoint" class="form-control" type="text">
                             </div>
-                            <div class="col-md-12 center-block">
+                            <div class="wrap-btn-get_start col-md-12 center-block">
                                 <button class="btn btn-get_start col-md-6 center-block">START</button>
                             </div>
                         </div>
@@ -50,32 +51,184 @@
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="domain">
-                        <div>
-                            <h2>Domain Register</h2>
+                        <div class="custom-panel">
+                            <h2>Register Domain</h2>
+                            <div class="form-group">
+                                <label for="domainName">Domain name</label>
+                                <input id="domainName" class="form-control" type="text">
+                            </div>
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">REGISTER</button>
+
+                            </div>
                         </div>
-                        <div>
-                            <h2>Domain List</h2>
+                        <div class="custom-panel">
+                            <h2>GET Domain List</h2>
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">GET LIST</button>
+                            </div>
+                            <h3>Result</h3>
+                            <table class="table domain-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Creator</th>
+                                        <th>Created</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>test domain</td>
+                                        <td>user</td>
+                                        <td>2016-09-26 14:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="asset">
-                        <div>
-                            <h2>Asset Register</h2>
+                        <div class="custom-panel">
+                            <h2>Create Asset</h2>
+                            <div class="form-group">
+                                <label for="domainName">Domain name</label>
+                                <input id="domainName" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="assetName">Asset name</label>
+                                <input id="assetName" class="form-control" type="text">
+                            </div>
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">CREATE</button>
+                            </div>
+
                         </div>
-                        <div>
-                            <h2>Asset Operation</h2>
+                        <div class="custom-panel">
+                            <h2>Operate Asset</h2>
+                            <div class="form-group">
+                                <label for="assetId">Asset uuid</label>
+                                <input id="assetId" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="transfer">transfer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sender">Sender</label>
+                                <input id="sender" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="receiver">Receiver</label>
+                                <input id="receiver" class="form-control" type="text">
+                            </div>
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">OPERATE</button>
+                            </div>
+
                         </div>
-                        <div>
-                            <h2>Asset List</h2>
+                        <div class="custom-panel">
+                            <h2>GET Asset List</h2>
+                            <div class="form-group">
+                                <label for="domainName">Domain name</label>
+                                <input id="domainName" class="form-control" type="text">
+                            </div>
+
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">GET LIST</button>
+                            </div>
+                            <h3>Result</h3>
+                            <table class="table domain-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Creator</th>
+                                        <th>Created</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>test asset</td>
+                                        <td>user</td>
+                                        <td>2016-09-26 14:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="transaction">
-                        <div>
-                            <h2>Transaction History(User)</h2>
+                        <div class="custom-panel">
+                            <h2>GET Transaction History(User)</h2>
+                            <div class="form-group">
+                                <label for="userId">User uuid</label>
+                                <input id="userId" class="form-control" type="text">
+                            </div>
+
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">GET HISTORY</button>
+                            </div>
+                            <h3>Result</h3>
+                            <table class="table domain-table">
+                                <thead>
+                                    <tr>
+                                        <th>Asset id</th>
+                                        <th>Sender</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>asset uuid</td>
+                                        <td>test sender</td>
+                                        <td>10000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>asset uuid</td>
+                                        <td>test sender</td>
+                                        <td>500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
                         </div>
-                        <div>
-                            <h2>Transaction History(Asset)</h2>
+                        <div class="custom-panel">
+                            <h2>GET Transaction History(Asset)</h2>
+                            <div class="form-group">
+                                <label for="domainName">Domain name</label>
+                                <input id="domainName" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="assetName">Asset name</label>
+                                <input id="assetName" class="form-control" type="text">
+                            </div>
+
+
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">GET HISTORY</button>
+                            </div>
+                            <h3>Result</h3>
+                            <table class="table domain-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sender</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>test sender</td>
+                                        <td>10000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>test sender</td>
+                                        <td>500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
