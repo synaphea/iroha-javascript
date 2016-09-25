@@ -1,7 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <title>iroha.js demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <nav class="navbar custom-nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <!--<img src="img/iroha-main-center.png" alt="brand">-->
+                    </a>
+                </div>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="">GitHub</a></li>
+                    <li><a href="">HowToUse</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active custom-tabs"><a href="#start" aria-controls="start" role="tab" data-toggle="tab">GET START</a></li>
+                    <li role="presentation" class="custom-tabs"><a href="#domain" aria-controls="domain" role="tab" data-toggle="tab">DOMAIN</a></li>
+                    <li role="presentation" class="custom-tabs"><a href="#asset" aria-controls="asset" role="tab" data-toggle="tab">ASSET</a></li>
+                    <li role="presentation" class="custom-tabs"><a href="#transaction" aria-controls="transaction" role="tab" data-toggle="tab">TRANSACTION</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="start">
+                        <div>
+                            <h2>GET START(SETTING)</h2>
+                            <div class="form-group">
+                                <label for="accessPoint">Access Point</label>
+                                <input id="accessPoint" class="form-control" type="text">
+                            </div>
+                            <div class="col-md-12 center-block">
+                                <button class="btn btn-get_start col-md-6 center-block">START</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="domain">
+                        <div>
+                            <h2>Domain Register</h2>
+                        </div>
+                        <div>
+                            <h2>Domain List</h2>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="asset">
+                        <div>
+                            <h2>Asset Register</h2>
+                        </div>
+                        <div>
+                            <h2>Asset Operation</h2>
+                        </div>
+                        <div>
+                            <h2>Asset List</h2>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="transaction">
+                        <div>
+                            <h2>Transaction History(User)</h2>
+                        </div>
+                        <div>
+                            <h2>Transaction History(Asset)</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../dist/iroha.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
