@@ -23,7 +23,7 @@
         </nav>
         <div class="container">
             <div class="col-md-12 text-center" style="margin-bottom: 30px;">
-                <img src="img/iroha-main-center.png" alt="iroha">
+                <img src="img/iroha-main-center.png" alt="iroha" class="img-responsive center-block">
             </div>
             <div class="col-md-12">
                 <!-- Nav tabs -->
@@ -38,7 +38,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="start">
                         <div class="custom-panel">
-                            <h2>GET START(SETTING)</h2>
+                            <h2>GET START(SETTING) <small>Setting access point and Generate Key Pair</small></h2>
                             <div class="form-group">
                                 <label for="accessPoint">Access Point</label>
                                 <input id="accessPoint" class="form-control" type="text">
@@ -104,14 +104,15 @@
 
                         </div>
                         <div class="custom-panel">
-                            <h2>Operate Asset</h2>
+                            <h2>Operate Asset <small>Some command execute.</small></h2>
                             <div class="form-group">
                                 <label for="assetId">Asset uuid</label>
                                 <input id="assetId" class="form-control" type="text">
                             </div>
 
                             <div class="form-group">
-                                <select class="form-control">
+                                <label for="command">Command</label>
+                                <select class="form-control" id="command">
                                     <option value="transfer">transfer</option>
                                 </select>
                             </div>
