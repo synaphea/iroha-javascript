@@ -7,7 +7,9 @@
 </template>
 
 <script>
-import '../../../src/index.js'
+import iroha from '../../../src/iroha.js'
+import axios from 'axios'
+import moment from 'moment'
 
 export default {
   name: 'createUser',
@@ -18,9 +20,30 @@ export default {
   },
   methods: {
     clickCreateUser () {
+      this.registAccount()
+    },
+
+    registAccount () {
       // ログイン処理を挟む
-      console.log(this.userName)
-      this.$router.push('user/wallet')
+      var keys = iroha.createKeyPair()
+
+      /* eslint-disable no-undef */
+      const url = `${IROHA_URL}/account/register`
+      axios.post(url, {
+        publicKey: keys.publicKey,
+        alias: this.userName,
+        timestamp: moment().unix()
+      })
+      .then(function (response) {
+        console.log(response)
+
+        this.$localStorage.set('publicKey', keys.publicKey)
+        this.$localStorage.set('privateKey', keys.privateKey)
+        this.$router.push('user/wallet')
+      })
+      .catch(function (error) {
+        console.error(error)
+      })
     }
   }
 }

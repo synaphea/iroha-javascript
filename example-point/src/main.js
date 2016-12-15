@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App'
+import VueLocalStorage from 'vue-localstorage'
+
 import CreateUser from './components/CreateUser'
 import User from './components/User'
 import Wallet from './components/Wallet'
@@ -10,6 +12,7 @@ import Send from './components/Send'
 import Receive from './components/Receive'
 
 Vue.use(Router)
+Vue.use(VueLocalStorage)
 
 const router = new Router({
   routes: [
@@ -31,5 +34,19 @@ new Vue({
   el: '#app',
   template: '<App/>',
   router: router,
-  components: { App }
+  components: { App },
+  localStorage: {
+    publicKey: {
+      type: String,
+      default: ''
+    },
+    privateKey: {
+      type: String,
+      default: ''
+    },
+    uuid: {
+      type: String,
+      default: ''
+    }
+  }
 })
