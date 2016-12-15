@@ -13,11 +13,8 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "brfs": "^1.4.3",
-    "fs": "0.0.1-security",
     "js-sha3": "^0.5.5",
     "supercop": "https://github.com/GUCCI-swallow/supercop.js.git",
-    "transform-loader": "^0.2.3",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0"
