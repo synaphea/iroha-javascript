@@ -1,14 +1,26 @@
 <template>
   <div>
     <h1>USER</h1>
+    <router-link to='/user/wallet'>Wallet</router-link>
+    <router-link to='/user/send'>Send</router-link>
+    <router-link to='/user/receive'>Receive</router-link>
     <router-view>
     </router-view>
   </div>
 </template>
 
 <script>
+import Wallet from './Wallet'
+import Send from './Send'
+import Receive from './Receive'
+
 export default {
-  name: 'user'
+  name: 'user',
+  components: {
+    Wallet,
+    Send,
+    Receive
+  }
 }
 </script>
 

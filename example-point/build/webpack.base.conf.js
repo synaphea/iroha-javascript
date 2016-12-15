@@ -33,6 +33,11 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+    /*postLoaders: [
+        {
+          loader: 'transform-loader?brfs'
+        }
+    ],*/
     preLoaders: [
       {
         test: /\.vue$/,
@@ -69,6 +74,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
+
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -80,6 +86,15 @@ module.exports = {
       }
     ]
   },
+  /*transforms: [
+    function(file) {
+      return through(function(buf) {
+        this.queue(buf.split("").map(function(s) {
+          return String.fromCharCode(127-s.charCodeAt(0));
+        }).join(""));
+      }, function() { this.queue(null); });
+    }
+  ],*/
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
@@ -90,5 +105,8 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
+  },
+  node: {
+    fs: 'empty'
   }
 }
