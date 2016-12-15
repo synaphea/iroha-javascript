@@ -28,7 +28,7 @@ export default {
       var keys = iroha.createKeyPair()
 
       /* eslint-disable no-undef */
-      const url = `${IROHA_URL}/account/register`
+      const url = `${IROHA_URL}/api/v1/account/register`
       axios.post(url, {
         publicKey: keys.publicKey,
         alias: this.userName,
@@ -37,8 +37,11 @@ export default {
       .then(function (response) {
         console.log(response)
 
+        // save data
         this.$localStorage.set('publicKey', keys.publicKey)
         this.$localStorage.set('privateKey', keys.privateKey)
+        this.$localStorage.set('uuid', response.data.uuid)
+
         this.$router.push('user/wallet')
       })
       .catch(function (error) {
