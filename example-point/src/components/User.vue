@@ -16,6 +16,32 @@ import Receive from './Receive'
 
 export default {
   name: 'user',
+  data () {
+    return {
+      value: ''
+    }
+  },
+  created () {
+    this.fetchAccount()
+  },
+  methods: {
+    fetchAccount () {
+      /* eslint-disable no-undef */
+      const url = `${IROHA_URL}/api/v1/account`
+      let uuid = this.$localStorage.get('uuid')
+      axios.get(url, {
+        params: {
+          uuid: uuid
+        }
+      })
+      .then(function (response) {
+        this.value = response.data.assets[0].value
+      })
+      .catch(function (error) {
+        console.error(error)
+      })
+    }
+  },
   components: {
     Wallet,
     Send,
