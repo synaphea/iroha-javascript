@@ -34,7 +34,6 @@ new Vue({
   el: '#app',
   template: '<App/>',
   router: router,
-  components: { App },
   localStorage: {
     publicKey: {
       type: String,
@@ -48,5 +47,6 @@ new Vue({
       type: String,
       default: ''
     }
-  }
+  },
+  components: { App }
 })

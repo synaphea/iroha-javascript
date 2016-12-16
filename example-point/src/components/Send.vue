@@ -53,10 +53,10 @@ export default {
         'signature': sign,
         'timestamp': timestamp
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response)
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error)
       })
     },

@@ -16,6 +16,7 @@
     "axios": "^0.15.3",
     "js-sha3": "^0.5.5",
     "moment": "^2.17.1",
+    "qr-image": "^3.1.0",
     "qrcode-reader": "^0.2.2",
     "supercop": "https://github.com/GUCCI-swallow/supercop.js.git",
     "vue": "^2.1.0",

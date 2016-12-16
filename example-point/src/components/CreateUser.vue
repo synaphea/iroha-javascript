@@ -30,11 +30,11 @@ export default {
       /* eslint-disable no-undef */
       const url = `${IROHA_URL}/api/v1/account/register`
       axios.post(url, {
-        publicKey: keys.publicKey,
-        alias: this.userName,
-        timestamp: moment().unix()
+        'publicKey': keys.publicKey,
+        'alias': this.userName,
+        'timestamp': moment().unix()
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response)
 
         // save data
@@ -44,7 +44,7 @@ export default {
 
         this.$router.push('user/wallet')
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error)
       })
     }

@@ -27,10 +27,10 @@ export default {
           uuid: uuid
         }
       })
-      .then(function (response) {
+      .then((response) => {
         this.transactions = response.data.history
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error)
       })
     }

@@ -35,10 +35,11 @@ export default {
           uuid: uuid
         }
       })
-      .then(function (response) {
-        this.value = response.data.assets[0].value
+      .then((response) => {
+        console.log(response)
+        // this.value = response.data.assets[0].value
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error)
       })
     }
