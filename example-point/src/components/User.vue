@@ -13,6 +13,7 @@
 import Wallet from './Wallet'
 import Send from './Send'
 import Receive from './Receive'
+import axios from 'axios'
 
 export default {
   name: 'user',

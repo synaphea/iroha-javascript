@@ -86,15 +86,6 @@ module.exports = {
       }
     ]
   },
-  /*transforms: [
-    function(file) {
-      return through(function(buf) {
-        this.queue(buf.split("").map(function(s) {
-          return String.fromCharCode(127-s.charCodeAt(0));
-        }).join(""));
-      }, function() { this.queue(null); });
-    }
-  ],*/
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
