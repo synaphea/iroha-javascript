@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>TOP</h1>
-    <input v-model='userName'>
+  <div class='row center'>
+    <img class='col s6 offset-s3 responsive-img center' src="../assets/iroha_logo.png" alt="iroha image">
+    <input type='text' v-model='userName'>
     <button v-on:click='clickCreateUser()'>Create User</button>
   </div>
 </template>
