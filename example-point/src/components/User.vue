@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>USER</h1>
+    <span>{{ value }}IRH</span>
     <router-link to='/user/wallet'>Wallet</router-link>
     <router-link to='/user/send'>Send</router-link>
     <router-link to='/user/receive'>Receive</router-link>
@@ -37,7 +38,9 @@ export default {
       })
       .then((response) => {
         console.log(response)
-        // this.value = response.data.assets[0].value
+        if (response.data.status === 200) {
+          this.value = response.data.assets[0].value
+        }
       })
       .catch((error) => {
         console.error(error)

@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       image: '',
-      ammount: 0
+      ammount: 100
     }
   },
   created () {
