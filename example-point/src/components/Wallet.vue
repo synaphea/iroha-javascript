@@ -10,11 +10,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
+        <tr v-for='transaction in transactions'>
+          <td>{{ transData(transaction.timestamp )}}</td>
+          <td>{{ transaction.param.sender }}</td>
+          <td>{{ transaction.param.receiver }}</td>
+          <td>{{ transaction.param.value }}</td>
         </tr>
         <tr>
           <td>2016/11/10</td>
@@ -59,6 +59,7 @@
 
 <script>
 import axios from 'axios'
+import moment from 'moment'
 
 export default {
   name: 'wallet',
@@ -81,11 +82,17 @@ export default {
         }
       })
       .then((response) => {
-        this.transactions = response.data.history
+        if (response.data.status === 200) {
+          this.transactions = response.data.history
+        }
       })
       .catch((error) => {
         console.error(error)
       })
+    },
+    transDate (timestamp) {
+      const time = moment.unix(timestamp).format('YYYY/MM/DD HH:mm:ss')
+      return time
     }
   }
 
