@@ -1,8 +1,11 @@
 <template>
-  <div class='row center'>
-    <img class='col s6 offset-s3 responsive-img center' src="../assets/iroha_logo.png" alt="iroha image">
-    <input type='text' v-model='userName'>
-    <button v-on:click='clickCreateUser()'>Create User</button>
+  <div class='row top-wrapper'>
+    <img class='col s4 offset-s4 responsive-img center' src="../assets/iroha_logo.svg" alt="iroha image">
+    <div class='input-field col s6 offset-s3'>
+      <img class='col s2 offset-s5' src="../assets/user.svg" alt="user_icon">
+      <input type='text' placeholder='Username' v-model='userName'>
+      <button class='waves-effect btn z-depth-0' v-on:click='clickCreateUser()'>Create User</button>
+    </div>
   </div>
 </template>
 
@@ -54,4 +57,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.top-wrapper{
+  padding-top: 50px;
+}
+.input-field{
+  padding-top: 100px;
+}
 </style>
