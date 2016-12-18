@@ -42,11 +42,11 @@ export default {
     sendValue () {
       /* eslint-disable no-undef */
       const url = `${IROHA_URL}/api/v1/asset/operation`
-      const assetUuid = ''
+      const assetUuid = '60f4a396b520d6c54e33634d060751814e0c4bf103a81c58da704bba82461c32'
       let publicKey = this.$localStorage.get('publicKey')
       let timestamp = moment().unix()
       let command = 'transfer'
-      let message = `${timestamp}${this.value}${publicKey}${this.receiver}${command}${assetUuid}`
+      let message = `timestamp:${timestamp},params.value:${this.value},params.sender:${publicKey},params.receiver:${this.receiver},params.command:${command},asset-uuid:${assetUuid}`
 
       /* eslint-disable indent */
       let sign = iroha.createSignature({
@@ -122,6 +122,7 @@ export default {
         main(cam.id)
       })
 
+      var self = this
       function main (camId) {
         navigator.getUserMedia({
           audio: false,
@@ -137,9 +138,15 @@ export default {
             var video = document.getElementById('video')
             video.src = URL.createObjectURL(stream)
             video.play()
+            console.log(video)
             video.volume = 0
             var stop = startReadQr(video, function (res) {
               stop()
+              const resJson = JSON.parse(res)
+              if (resJson.account && resJson.amount) {
+                self.amount = resJson.amount
+                self.receiver = resJson.account
+              }
               console.log(res)
             })
         }, function (e) { // error
