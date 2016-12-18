@@ -39,7 +39,7 @@
         <div class="divider"></div>
 
       </div>
-      <div class="col s10">
+      <div class="col s10 main">
         <router-view>
         </router-view>
       </div>
@@ -140,6 +140,9 @@ a,a:hover,a:visited{
 }
 .section > span{
   float: left;
+}
+.main{
+  height: 100%;
 }
 
 </style>
