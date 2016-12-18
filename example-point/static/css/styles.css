@@ -21,3 +21,7 @@ input[type='text']:focus:not([readonly]){
   border-bottom: 1px solid #DB0722;
   box-shadow: 0 1px 0 0 #DB0722;
 }
+input[type='number']:focus:not([readonly]){
+  border-bottom: 1px solid #DB0722;
+  box-shadow: 0 1px 0 0 #DB0722;
+}

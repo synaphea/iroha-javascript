@@ -1,7 +1,13 @@
 <template>
-  <div>
-    send
-    <video id="video"/>
+  <div class='send-wrapper'>
+    <div class="col s12">
+      <video id="video" class='col s4 offset-s4'/>
+    </div>
+    <div class='input-field col s4 offset-s4'>
+      <input type='text' placeholder='To' v-model='receiver'>
+      <input type='number' placeholder='Ammount' v-model.number='ammount'>
+      <button class='waves-effect btn z-depth-0'>Send</button>
+    </div>
   </div>
 </template>
 
@@ -15,7 +21,7 @@ export default {
   name: 'send',
   data () {
     return {
-      value: '',
+      ammount: 0,
       vState: '',
       receiver: ''
     }
@@ -193,4 +199,11 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
+.send-wrapper{
+  height: 100%;
+}
+
+#video{
+  height: 20%;
+}
 </style>
