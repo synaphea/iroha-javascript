@@ -16,12 +16,19 @@ export default {
   data () {
     return {
       value: '',
+      vState: '',
       receiver: ''
     }
   },
   created () {
     console.log('created')
     this.prepareVideo()
+  },
+  beforeDestroy () {
+    console.log('bd')
+  },
+  destroyed () {
+    console.log('d')
   },
   methods: {
     clickSend () {

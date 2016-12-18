@@ -1,12 +1,49 @@
 <template>
-  <div>
-    <h1>USER</h1>
-    <span>{{ value }}IRH</span>
-    <router-link to='/user/wallet'>Wallet</router-link>
-    <router-link to='/user/send'>Send</router-link>
-    <router-link to='/user/receive'>Receive</router-link>
-    <router-view>
-    </router-view>
+  <div class='wrapper'>
+    <nav class='z-depth-0'>
+      <div class="nav-wrapper">
+        <img class="left nav-logo" src="../assets/iroha_logo.svg" alt="">
+        <span class='right value-text'>{{ value }}IRH</span>
+      </div>
+    </nav>
+    <div class="row contents">
+      <div class="col s2 side-menu">
+        <div class="section">
+          <span>
+            <img class='menu-icon' src="../assets/wallet.svg" alt="">
+            <router-link to='/user/wallet'>Wallet</router-link>
+          </span>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+          <span>
+            <img class='menu-icon' src="../assets/send.svg" alt="">
+            <router-link to='/user/send'>Send</router-link>
+          </span>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+          <span>
+            <img class='menu-icon' src="../assets/receive.svg" alt="">
+            <router-link to='/user/receive'>Receive</router-link>
+          </span>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+          <span>
+            <img class='menu-icon' src="../assets/wallet.svg" alt="">
+            <router-link to='/user/explore'>Explore</router-link>
+          </span>
+        </div>
+        <div class="divider"></div>
+
+      </div>
+      <div class="col s10">
+        <router-view>
+        </router-view>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,5 +93,53 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+nav{
+  background-color: #fff;
+  padding: 0 30px;
+  color: #000;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 15%;
+}
+
+.nav-logo{
+  height: 90%;
+}
+.value-text{
+  line-height: 150px;
+}
+
+.wrapper{
+  height: 100%;
+}
+
+.contents{
+  height: 85%;
+  margin-bottom: 0;
+}
+
+.side-menu{
+  height: 100%;
+  background-color: #DB0722;
+  color: #fff;
+}
+
+.menu-icon{
+  width: 10%;
+  vertical-align: top;
+  margin-right: 5px;
+}
+a,a:hover,a:visited{
+  color: #fff;
+}
+
+.section{
+  height: 10%;
+  padding-top: 15%;
+}
+.section > span{
+  float: left;
+}
+
 </style>

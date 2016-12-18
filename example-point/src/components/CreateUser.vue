@@ -1,7 +1,7 @@
 <template>
   <div class='row top-wrapper'>
-    <img class='col s4 offset-s4 responsive-img center' src="../assets/iroha_logo.svg" alt="iroha image">
-    <div class='input-field col s6 offset-s3'>
+    <img class='col s2 offset-s5 responsive-img center' src="../assets/iroha_logo.svg" alt="iroha image">
+    <div class='input-field col s4 offset-s4'>
       <img class='col s2 offset-s5' src="../assets/user.svg" alt="user_icon">
       <input type='text' placeholder='Username' v-model='userName'>
       <button class='waves-effect btn z-depth-0' v-on:click='clickCreateUser()'>Create User</button>
