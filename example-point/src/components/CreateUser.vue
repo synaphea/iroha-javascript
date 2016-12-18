@@ -21,6 +21,13 @@ export default {
       userName: ''
     }
   },
+  created () {
+    if (!this.$localStorage.get('publicKey')) {
+      this.$router.push('/')
+    } else {
+      this.$router.push('/user/wallet')
+    }
+  },
   methods: {
     clickCreateUser () {
       this.registAccount()

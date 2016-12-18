@@ -61,6 +61,11 @@ export default {
     }
   },
   created () {
+    if (!this.$localStorage.get('publicKey')) {
+      this.$router.push('/')
+    } else {
+      this.$router.push('/user/wallet')
+    }
     this.fetchAccount()
   },
   methods: {
