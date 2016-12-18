@@ -6,7 +6,7 @@
     <div class='input-field col s4 offset-s4'>
       <input type='text' placeholder='To' v-model='receiver'>
       <input type='number' placeholder='Ammount' v-model.number='ammount'>
-      <button class='waves-effect btn z-depth-0'>Send</button>
+      <button class='waves-effect btn z-depth-0'>SEND</button>
     </div>
   </div>
 </template>

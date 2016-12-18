@@ -1,8 +1,10 @@
 <template>
-  <div>
-    receive
+  <div class='receive-wrapper'>
     <div v-html='image'></div>
-    <input type='number' min='0' v-bind:change='createQr()' v-model.number='ammount'>
+    <div class='input-field col s4 offset-s4'>
+      <input type='number' min='0' v-bind:change='createQr()' v-model.number='ammount'>
+      <button class='waves-effect btn z-depth-0'>CONFIRM</button>
+    </div>
   </div>
 </template>
 

@@ -11,7 +11,7 @@ html, body{
   background-color: #DB0722;
   border-radius: 15px;
 }
-.btn:hover{
+.btn:hover,.btn:focus{
   background-color: #e53935;
 }
 ::-webkit-input-placeholder {
