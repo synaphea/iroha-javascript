@@ -19,7 +19,7 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env,
-      'IROHA_URL': JSON.stringify('iroha-url')
+      'IROHA_URL': JSON.stringify('YourURL')
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurrenceOrderPlugin(),
