@@ -32,6 +32,10 @@ export default {
   },
   methods: {
     sendValue () {
+      if (this.amount === 0 || this.receiver) {
+        console.error('param not found')
+        return
+      }
       /* eslint-disable no-undef */
       const url = `${IROHA_URL}/api/v1/asset/operation`
       const assetUuid = '60f4a396b520d6c54e33634d060751814e0c4bf103a81c58da704bba82461c32'
