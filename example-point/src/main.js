@@ -10,6 +10,7 @@ import User from './components/User'
 import Wallet from './components/Wallet'
 import Send from './components/Send'
 import Receive from './components/Receive'
+import Explore from './components/Explore'
 
 Vue.use(Router)
 Vue.use(VueLocalStorage)
@@ -23,6 +24,7 @@ const router = new Router({
       children: [
         { path: 'wallet', component: Wallet },
         { path: 'send', component: Send },
+        { path: 'explore', component: Explore },
         { path: 'receive', component: Receive }
       ]
     }

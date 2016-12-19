@@ -51,6 +51,7 @@
 import Wallet from './Wallet'
 import Send from './Send'
 import Receive from './Receive'
+import Explore from './Explore'
 import axios from 'axios'
 
 export default {
@@ -63,8 +64,6 @@ export default {
   created () {
     if (!this.$localStorage.get('publicKey')) {
       this.$router.push('/')
-    } else {
-      this.$router.push('/user/wallet')
     }
     this.fetchAccount()
   },
@@ -93,6 +92,7 @@ export default {
   components: {
     Wallet,
     Send,
+    Explore,
     Receive
   }
 }
