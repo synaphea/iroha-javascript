@@ -70,6 +70,7 @@ export default {
   },
   methods: {
     fetchAccount () {
+      console.log('fetchAccount')
       /* eslint-disable no-undef */
       const url = `${IROHA_URL}/api/v1/account`
       let uuid = this.$localStorage.get('uuid')
@@ -112,7 +113,7 @@ nav{
   height: 90%;
 }
 .value-text{
-  line-height: 150px;
+  //line-height: 150px;
 }
 
 .wrapper{
@@ -132,7 +133,7 @@ nav{
 
 .menu-icon{
   width: 10%;
-  vertical-align: top;
+  vertical-align: middle;
   margin-right: 5px;
 }
 a,a:hover,a:visited{

@@ -5,8 +5,8 @@
     </div>
     <div class='input-field col s4 offset-s4'>
       <input type='text' placeholder='To' v-model='receiver'>
-      <input type='number' placeholder='Ammount' v-model.number='ammount'>
-      <button class='waves-effect btn z-depth-0'>SEND</button>
+      <input type='number' placeholder='Ammount' v-model.number='amount'>
+      <button v-on:click='sendValue()' class='waves-effect btn z-depth-0'>SEND</button>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   name: 'send',
   data () {
     return {
-      ammount: 0,
+      amount: 0,
       vState: '',
       receiver: ''
     }
@@ -30,15 +30,7 @@ export default {
     console.log('created')
     this.prepareVideo()
   },
-  beforeDestroy () {
-    console.log('bd')
-  },
-  destroyed () {
-    console.log('d')
-  },
   methods: {
-    clickSend () {
-    },
     sendValue () {
       /* eslint-disable no-undef */
       const url = `${IROHA_URL}/api/v1/asset/operation`
@@ -46,7 +38,7 @@ export default {
       let publicKey = this.$localStorage.get('publicKey')
       let timestamp = moment().unix()
       let command = 'transfer'
-      let message = `timestamp:${timestamp},params.value:${this.value},params.sender:${publicKey},params.receiver:${this.receiver},params.command:${command},asset-uuid:${assetUuid}`
+      let message = `timestamp:${timestamp},params.value:${this.amount},params.sender:${publicKey},params.receiver:${this.receiver},params.command:${command},asset-uuid:${assetUuid}`
 
       /* eslint-disable indent */
       let sign = iroha.createSignature({
@@ -59,7 +51,7 @@ export default {
         'asset-uuid': assetUuid,
         'params': {
           'command': command,
-          'value': this.value,
+          'value': this.amount,
           'sender': publicKey,
           'receiver': this.receiver
         },
@@ -144,7 +136,7 @@ export default {
               stop()
               const resJson = JSON.parse(res)
               if (resJson.account && resJson.amount) {
-                self.amount = resJson.amount
+                self.amount = Number(resJson.amount)
                 self.receiver = resJson.account
               }
               console.log(res)

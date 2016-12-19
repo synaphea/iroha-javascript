@@ -11,46 +11,10 @@
       </thead>
       <tbody>
         <tr v-for='transaction in transactions'>
-          <td>{{ transData(transaction.timestamp )}}</td>
-          <td>{{ transaction.param.sender }}</td>
-          <td>{{ transaction.param.receiver }}</td>
-          <td>{{ transaction.param.value }}</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-        </tr>
-        <tr>
-          <td>2016/11/10</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
-          <td>testtestesteesaaaaaaaaaaa</td>
+          <td>{{ transDate(transaction.timestamp )}}</td>
+          <td class='key-cell'>{{ transaction.params.sender }}</td>
+          <td class='key-cell'>{{ transaction.params.receiver }}</td>
+          <td>{{ transaction.params.value }}</td>
         </tr>
       </tbody>
     </table>
@@ -83,7 +47,8 @@ export default {
       })
       .then((response) => {
         if (response.data.status === 200) {
-          this.transactions = response.data.history
+          console.log(response)
+          this.transactions = response.data.history.reverse()
         }
       })
       .catch((error) => {
@@ -107,6 +72,7 @@ export default {
 }
 
 .wallet-table{
+  table-layout: fixed;
   border: 2px solid #000;
 }
 
@@ -123,5 +89,11 @@ export default {
 .wallet-table > tbody > tr > td{
   border: 1px solid #000;
 
+}
+
+.key-cell{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

@@ -2,8 +2,7 @@
   <div class='receive-wrapper'>
     <div v-html='image'></div>
     <div class='input-field col s4 offset-s4'>
-      <input type='number' min='0' v-bind:change='createQr()' v-model.number='ammount'>
-      <button class='waves-effect btn z-depth-0'>CONFIRM</button>
+      <input type='number' min='0' v-bind:change='createQr()' v-model.number='amount'>
     </div>
   </div>
 </template>
@@ -16,18 +15,18 @@ export default {
   data () {
     return {
       image: '',
-      ammount: 100
+      amount: 100
     }
   },
   created () {
   },
   methods: {
     createQr () {
-      if (this.ammount < 0 || !this.ammount) return
-      console.log(this.ammount)
+      if (this.amount < 0 || !this.amount) return
+      console.log(this.amount)
       const qrData = {
         account: this.$localStorage.get('publicKey'),
-        ammount: this.ammount
+        amount: this.amount
       }
       const qrString = JSON.stringify(qrData)
       console.log(qrString)
