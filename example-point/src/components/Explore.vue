@@ -56,8 +56,10 @@ export default{
     },
     initWebSocket () {
       /* eslint-disable no-undef */
-      // const url = `${IROHA_URL}/api/v1/history/transaction?${assetUuid}`
-      var client = new W3C('wss://point-demo.iroha.tech/api/v1/history/transaction/ws')
+      const url = `${IROHA_URL}/api/v1/history/transaction/ws`
+      const wsUrl = 'wss:' + url.split(':')[1]
+      console.log(wsUrl)
+      var client = new W3C(wsUrl)
       client.onerror = () => {
         console.log('Connection Error')
       }
