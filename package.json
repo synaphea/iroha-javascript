@@ -1,10 +1,10 @@
 {
-  "name": "irohajs",
+  "name": "@synaphea/irohajs",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "dist/irohajs.js",
-  "typings": "dist/src/irohajs.d.ts",
+  "typings": "dist/types/irohajs.d.ts",
   "files": [
     "dist"
   ],
@@ -18,19 +18,19 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint -e **/node_modules/** -e **/dist/** **/*.ts ",
-    "prebuild": "rimraf dist && rimraf docs",
-    "build": "webpack -p",
-    "build:dev": "webpack",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "lint": "./node_modules/.bin/tslint -e **/node_modules/** -e **/dist/** **/*.ts ",
+    "prebuild": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/rimraf docs",
+    "build": "./node_modules/.bin/webpack -p",
+    "build:dev": "./node_modules/.bin/webpack",
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest --watch",
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
     "deploy-docs": "node tools/gh-pages-publish.js",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "./node_modules/.bin/git-cz",
+    "semantic-release": "./node_modules/.bin/semantic-release pre && npm publish && ./node_modules/.bin/semantic-release post",
     "prepush": "npm run test:prod && npm run build",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "./node_modules/.bin/validate-commit-msg"
   },
   "repository": {
     "type": "git",
@@ -78,7 +78,7 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "^18.1.1",
+    "@types/jest": "^22.0.1",
     "@types/node": "^7.0.2",
     "@types/webpack": "^2.2.7",
     "awesome-typescript-loader": "^3.1.0",
@@ -89,14 +89,15 @@
     "coveralls": "^2.11.15",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.1",
-    "jest": "^19.0.2",
+    "iconv-lite": "^0.4.19",
+    "jest": "^22.0.4",
     "lodash": "^4.17.4",
     "prompt": "^1.0.0",
     "replace-in-file": "^2.3.2",
     "rimraf": "^2.5.4",
     "semantic-release": "^6.3.2",
     "ts-jest": "^19.0.0",
-    "ts-node": "^2.0.0",
+    "ts-node": "^4.1.0",
     "tslint": "^4.3.1",
     "tslint-config-standard": "^4.0.0",
     "typedoc": "^0.5.7",

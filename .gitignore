@@ -5,5 +5,4 @@ coverage
 *.log
 .vscode
 .idea
-/dist/
 .awcache
