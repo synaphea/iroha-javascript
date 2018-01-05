@@ -1,12 +1,12 @@
-import * as iroha from "../../../src/irohajs";
-import {request, assertHelper} from "./../../__mocks__/request";
+import * as iroha from '../../../src/irohajs';
+import {request, assertHelper} from './../../__mocks__/request';
 
-describe("TEST Iroha javascript", () => {
+describe('TEST Iroha javascript', () => {
   beforeEach((done) => {
     done();
   });
 
-  describe("TransactionRepository", () => {
+  describe('TransactionRepository', () => {
     let client: iroha.ITransactionRepositoryService;
 
     beforeAll(() => {
@@ -14,16 +14,16 @@ describe("TEST Iroha javascript", () => {
       client = data.TransactionRepository;
     });
 
-    it("find!", () => {
+    it('find!', () => {
       const query = new iroha.Query();
-      return request(client, "find", [query])
-        .then(assertHelper("0", "OK", undefined));
+      return request(client, 'find', [query])
+        .then(assertHelper('0', 'OK', undefined));
     });
 
-    it("fetch!", () => {
+    it('fetch!', () => {
       const query = new iroha.Query();
-      return request(client, "fetch", [query])
-        .then(assertHelper("0", "OK", undefined));
+      return request(client, 'fetch', [query])
+        .then(assertHelper('0', 'OK', undefined));
     });
   });
 });

@@ -1,6 +1,6 @@
-import { Asset } from "../../models";
-import * as Routes from "./routes";
-import { BaseService } from "./base";
+import { Asset } from '../../models';
+import * as Routes from './routes';
+import { BaseService } from './base';
 
 export class AssetOperationRequest {
   assetUuid: string;

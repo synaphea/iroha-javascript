@@ -1,14 +1,14 @@
-export const grpc = require("grpc");
+export const grpc = require('grpc');
 
-import axios from "axios";
-import * as moment from "moment";
-import { IrohaGrpcFormat, IIrohaGrpc, IGrpcFactory, grpcServiceFactory } from "./grpc/utils";
-import { IKeyPair } from "./irohajs";
+import axios from 'axios';
+import * as moment from 'moment';
+import { IrohaGrpcFormat, IIrohaGrpc, IGrpcFactory, grpcServiceFactory } from './grpc/utils';
+import { IKeyPair } from './irohajs';
 import {
   ITransactionRepositoryService, IAssetRepositoryService,
   IIzanamiService, ISumeragiService
-} from "./grpc/protobuff/api";
-import { IrohaRestClient } from "./rest/api";
+} from './grpc/protobuff/api';
+import { IrohaRestClient } from './rest/api';
 
 /**
  *
@@ -36,7 +36,7 @@ export interface IApi {
  */
 export class IrohaService implements IGrpcFactory {
   static DefaultIrohaConfiguration = {
-    hostname: "localhost",
+    hostname: 'localhost',
     rest: {
       port: 1204
     },
@@ -102,7 +102,7 @@ export class IrohaService implements IGrpcFactory {
       const proto: IApi = grpc.load(`${__dirname}/grpc/protobuff/api.proto`);
       this.rpc = proto.Api;
     } else {
-      throw new Error("Error: Flatbuffers are not supported by gRPC yet!");
+      throw new Error('Error: Flatbuffers are not supported by gRPC yet!');
     }
 
     this.rest = new IrohaRestClient(this.getRestBaseUrl());

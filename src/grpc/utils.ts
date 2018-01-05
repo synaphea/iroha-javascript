@@ -1,7 +1,7 @@
 import { ITransactionRepositoryService, IAssetRepositoryService,
-    IIzanamiService, ISumeragiService } from "./protobuff/api";
+    IIzanamiService, ISumeragiService } from './protobuff/api';
 
-export const grpc = require("grpc");
+export const grpc = require('grpc');
 
 /**
  *

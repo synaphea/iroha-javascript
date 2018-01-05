@@ -1,6 +1,6 @@
-import { Account } from "../../models";
-import * as Routes from "./routes";
-import { BaseService } from "./base";
+import { Account } from '../../models';
+import * as Routes from './routes';
+import { BaseService } from './base';
 
 /**
  * Account register request

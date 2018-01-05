@@ -1,7 +1,7 @@
-import * as axios from "axios";
-import * as moment from "moment";
+import * as axios from 'axios';
+import * as moment from 'moment';
 
-import { IKeyPair, supercop, sha3_256 } from "./irohajs";
+import { IKeyPair, supercop, sha3_256 } from './irohajs';
 
 /**
  * Inteface of iroha wallet.
@@ -28,13 +28,13 @@ export class Wallet implements IWallet {
 
   toJSON (): IKeyPair {
     return {
-      publicKey: this.publicKey.toString("base64"),
-      privateKey: this.privateKey.toString("base64")
+      publicKey: this.publicKey.toString('base64'),
+      privateKey: this.privateKey.toString('base64')
     };
   }
 
   sign (msg: string): string {
     const message = new Buffer(sha3_256(msg));
-    return supercop.sign(message, this.publicKey, this.privateKey).toString("base64");
+    return supercop.sign(message, this.publicKey, this.privateKey).toString('base64');
   }
 }

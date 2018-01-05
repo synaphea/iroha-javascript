@@ -1,6 +1,6 @@
-import { Domain } from "../../models";
-import { BaseService } from "./base";
-import * as Routes from "./routes";
+import { Domain } from '../../models';
+import { BaseService } from './base';
+import * as Routes from './routes';
 
 /**
  * DomainRegisterRequest

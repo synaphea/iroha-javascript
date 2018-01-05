@@ -1,6 +1,6 @@
-import { Transaction } from "../../models";
-import { BaseService } from "./base";
-import * as Routes from "./routes";
+import { Transaction } from '../../models';
+import { BaseService } from './base';
+import * as Routes from './routes';
 
 /**
  * TransactionRequest
@@ -38,7 +38,7 @@ export class TransactionService extends BaseService implements ITransactionServi
   }
 
   private toUrl (request: TransactionRequest): string {
-    let url = "";
+    let url = '';
     if (request.asset != null && request.asset != null) {
       url = `${Routes.TRANSACTION_HISTORY(request.asset, request.domain)}`;
     }

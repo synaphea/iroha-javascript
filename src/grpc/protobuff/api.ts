@@ -1,7 +1,7 @@
 import {
   Query, TransactionResponse, Transaction,
   AssetResponse, StatusResponse, ConsensusEvent
-} from "../../models";
+} from '../../models';
 
 /**
  * TransactionRepositoryService

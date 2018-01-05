@@ -1,29 +1,29 @@
-import { join } from "path";
-const _ = require("lodash");
-const minimist = require("minimist");
-const { camelCase } = require("lodash");
-const { TsConfigPathsPlugin, CheckerPlugin } = require("awesome-typescript-loader");
-const TypedocWebpackPlugin = require("typedoc-webpack-plugin");
+import { join } from 'path';
+const _ = require('lodash');
+const minimist = require('minimist');
+const { camelCase } = require('lodash');
+const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
+const TypedocWebpackPlugin = require('typedoc-webpack-plugin');
 
-const DEFAULT_TARGET = "node";
+const DEFAULT_TARGET = 'node';
 
-const libraryName = "irohajs";
+const libraryName = 'irohajs';
 
-const nodeModules = ["grpc", "moment", "axios", "js-sha3", "supercop.js"];
+const nodeModules = ['grpc', 'moment', 'axios', 'js-sha3', 'supercop.js'];
 
 const DEFAULT_PARAMS = {
   entry: join(__dirname, `src/${libraryName}.ts`),
-  target: "node",
-  devtool: "source-map",
+  target: 'node',
+  devtool: 'source-map',
   output: {
-    path: join(__dirname, "dist"),
-    libraryTarget: "umd",
+    path: join(__dirname, 'dist'),
+    libraryTarget: 'umd',
     library: camelCase(libraryName),
     filename: `${libraryName}.js`
   },
   externals: nodeModules,
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: ['.ts', '.js']
   },
   module: {
     rules: [
@@ -31,7 +31,7 @@ const DEFAULT_PARAMS = {
         test: /\.ts$/,
         use: [
           {
-            loader: "awesome-typescript-loader"
+            loader: 'awesome-typescript-loader'
           }
         ]
       }
@@ -42,26 +42,26 @@ const DEFAULT_PARAMS = {
     new TsConfigPathsPlugin(),
     new TypedocWebpackPlugin(
       {
-        theme: "minimal",
-        out: "docs",
-        target: "es6",
+        theme: 'minimal',
+        out: 'docs',
+        target: 'es6',
         ignoreCompilerErrors: true
       },
-      "src"
+      'src'
     )
   ]
 };
 
 const PARAMS_PER_TARGET: any = {
   node: {
-    target: "node"
+    target: 'node'
   },
   web: {
-    target: "web",
+    target: 'web',
     node: {
-      fs: "empty",
-      net: "empty",
-      tls: "empty"
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty'
     }
   }
 };
@@ -74,7 +74,7 @@ export default params;
 function _resolveBuildTarget (defaultTarget: string): string {
   let target = minimist(process.argv.slice(2)).target;
   if (!target) {
-    console.log("No build target provided, using default target instead\n\n");
+    console.log('No build target provided, using default target instead\n\n');
     target = defaultTarget;
   }
   return target;
