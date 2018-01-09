@@ -1,4 +1,4 @@
-import * as iroha from "../src/irohajs";
+import * as iroha from "../dist/irohajs";
 const sha3_256 = require("js-sha3").sha3_256;
 const supercop = require("supercop.js");
 
