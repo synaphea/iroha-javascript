@@ -1,0 +1,1 @@
+let iroha = require('../dist/irohajs');
